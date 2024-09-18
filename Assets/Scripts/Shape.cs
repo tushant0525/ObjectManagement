@@ -49,6 +49,7 @@ public class Shape : PersistableObject
         }
         sharedPropertyBlock.SetColor(colorPropertyId, color);
         meshRenderer.SetPropertyBlock(sharedPropertyBlock);
+        meshRenderer.material.color = color;
     }
 
     public void SetMaterial(Material material, int materialId)
