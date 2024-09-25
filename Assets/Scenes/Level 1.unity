@@ -316,6 +316,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnZone: {fileID: 245663813}
+  persistentObjects:
+  - {fileID: 245663813}
 --- !u!4 &2044056127
 Transform:
   m_ObjectHideFlags: 0

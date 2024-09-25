@@ -6,7 +6,7 @@ public class GameDataReader
 
     BinaryReader reader;
 
-    public GameDataReader(BinaryReader reader,int version)
+    public GameDataReader(BinaryReader reader, int version)
     {
         this.reader = reader;
         this.Version = version;
@@ -46,5 +46,9 @@ public class GameDataReader
         value.b = reader.ReadSingle();
         value.a = reader.ReadSingle();
         return value;
+    }
+    public Random.State ReadRandomState()
+    {
+        return JsonUtility.FromJson<Random.State>(reader.ReadString());
     }
 }

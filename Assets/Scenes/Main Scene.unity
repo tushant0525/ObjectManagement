@@ -380,7 +380,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: 0.10775624, y: 0.4371735, z: -0.052851833, w: 0.8913331}
-  m_LocalPosition: {x: -3.651164, y: 5.7703648, z: -3.108152}
+  m_LocalPosition: {x: -20.750496, y: 6.2184334, z: -16.14188}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1406,6 +1406,9 @@ MonoBehaviour:
   saveKey: 115
   loadKey: 108
   levelCount: 3
+  reseedOnLoad: 0
+  creationSpeedSlider: {fileID: 1994171031}
+  destructionSpeedSlider: {fileID: 1683912404}
 --- !u!1 &1954370001
 GameObject:
   m_ObjectHideFlags: 0
