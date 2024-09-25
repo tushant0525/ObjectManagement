@@ -313,13 +313,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 381201909}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 3.28, y: 3.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 714948630}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &381201911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -332,6 +332,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94402a0bf20abe04cbd2fdb841219a2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnConfig:
+    movementDirection: 0
+    speed:
+      min: 0
+      max: 0
+    angularSpeed:
+      min: 0
+      max: 0
+    scale:
+      min: 0
+      max: 0
+    color:
+      hue:
+        min: 0
+        max: 0
+      saturation:
+        min: 0
+        max: 0
+      value:
+        min: 0
+        max: 0
   surfaceOnly: 0
 --- !u!1 &714948628
 GameObject:
@@ -381,6 +402,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2d41f36680a1514783db897cf1963b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnConfig:
+    movementDirection: 0
+    speed:
+      min: 1.5
+      max: 2.5
+    angularSpeed:
+      min: 0
+      max: 90
+    scale:
+      min: 0.1
+      max: 1
+    color:
+      hue:
+        min: 0
+        max: 1
+      saturation:
+        min: 0.5
+        max: 1
+      value:
+        min: 0.25
+        max: 1
+  overrideConfig: 1
   sequential: 1
   spawnZones:
   - {fileID: 381201911}
@@ -412,13 +455,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 802204401}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 3.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 714948630}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!114 &802204403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -431,6 +474,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94402a0bf20abe04cbd2fdb841219a2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnConfig:
+    movementDirection: 0
+    speed:
+      min: 0
+      max: 0
+    angularSpeed:
+      min: 0
+      max: 0
+    scale:
+      min: 0
+      max: 0
+    color:
+      hue:
+        min: 0
+        max: 0
+      saturation:
+        min: 0
+        max: 0
+      value:
+        min: 0
+        max: 0
   surfaceOnly: 1
 --- !u!1 &1290675364
 GameObject:
@@ -476,6 +540,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3d4cdeead803b34ca6b164bdab5b626, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnConfig:
+    movementDirection: 0
+    speed:
+      min: 0
+      max: 0
+    angularSpeed:
+      min: 0
+      max: 0
+    scale:
+      min: 0
+      max: 0
+    color:
+      hue:
+        min: 0
+        max: 0
+      saturation:
+        min: 0
+        max: 0
+      value:
+        min: 0
+        max: 0
   surfaceOnly: 0
 --- !u!1 &1895064809
 GameObject:
@@ -502,13 +587,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1895064809}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 3.03, y: 3.2, z: 3.39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 714948630}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &1895064811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -521,6 +606,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3d4cdeead803b34ca6b164bdab5b626, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnConfig:
+    movementDirection: 0
+    speed:
+      min: 0
+      max: 0
+    angularSpeed:
+      min: 0
+      max: 0
+    scale:
+      min: 0
+      max: 0
+    color:
+      hue:
+        min: 0
+        max: 0
+      saturation:
+        min: 0
+        max: 0
+      value:
+        min: 0
+        max: 0
   surfaceOnly: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
