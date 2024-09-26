@@ -11,6 +11,7 @@ public struct SpawnConfiguration
         Outward,
         Random
     }
+    public ShapeFactory[] factories;
 
     public MovementDirection movementDirection;
 
@@ -21,4 +22,6 @@ public struct SpawnConfiguration
     public FloatRange scale;
 
     public ColorRangeHSV color;
+
+    public bool uniformColor;
 }

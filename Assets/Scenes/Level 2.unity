@@ -332,6 +332,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3d4cdeead803b34ca6b164bdab5b626, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnConfig:
+    factories:
+    - {fileID: 11400000, guid: da47f655f834ad5409a31515f36c54e8, type: 2}
+    - {fileID: 11400000, guid: 5f100d6a4a2a3754da65507807971ffd, type: 2}
+    movementDirection: 0
+    speed:
+      min: 0
+      max: 0
+    angularSpeed:
+      min: 0
+      max: 0
+    scale:
+      min: 0
+      max: 0
+    color:
+      hue:
+        min: 0
+        max: 0
+      saturation:
+        min: 0
+        max: 0
+      value:
+        min: 0
+        max: 0
+    uniformColor: 0
   surfaceOnly: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

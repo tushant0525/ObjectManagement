@@ -332,6 +332,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94402a0bf20abe04cbd2fdb841219a2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnConfig:
+    factories: []
+    movementDirection: 0
+    speed:
+      min: 0
+      max: 0
+    angularSpeed:
+      min: 0
+      max: 0
+    scale:
+      min: 0
+      max: 0
+    color:
+      hue:
+        min: 0
+        max: 0
+      saturation:
+        min: 0
+        max: 0
+      value:
+        min: 0
+        max: 0
+    uniformColor: 0
   surfaceOnly: 0
 --- !u!1 &468238521
 GameObject:
@@ -377,6 +400,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94402a0bf20abe04cbd2fdb841219a2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnConfig:
+    factories: []
+    movementDirection: 0
+    speed:
+      min: 0
+      max: 0
+    angularSpeed:
+      min: 0
+      max: 0
+    scale:
+      min: 0
+      max: 0
+    color:
+      hue:
+        min: 0
+        max: 0
+      saturation:
+        min: 0
+        max: 0
+      value:
+        min: 0
+        max: 0
+    uniformColor: 0
   surfaceOnly: 0
 --- !u!1 &714948628
 GameObject:
@@ -424,6 +470,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2d41f36680a1514783db897cf1963b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnConfig:
+    factories:
+    - {fileID: 11400000, guid: da47f655f834ad5409a31515f36c54e8, type: 2}
+    - {fileID: 11400000, guid: 5f100d6a4a2a3754da65507807971ffd, type: 2}
+    movementDirection: 0
+    speed:
+      min: 0
+      max: 0
+    angularSpeed:
+      min: 0
+      max: 0
+    scale:
+      min: 0
+      max: 0
+    color:
+      hue:
+        min: 0
+        max: 0
+      saturation:
+        min: 0
+        max: 0
+      value:
+        min: 0
+        max: 0
+    uniformColor: 0
+  overrideConfig: 1
   sequential: 1
   spawnZones:
   - {fileID: 381201911}
