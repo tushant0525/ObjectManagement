@@ -32,7 +32,7 @@ public class GameManager : PersistableObject
     int loadedLevelBuildIndex;
     Random.State mainRandomState;
 
-    const int saveVersion = 5;
+    const int saveVersion = 6;
 
     void OnEnable()
     {

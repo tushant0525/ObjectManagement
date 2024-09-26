@@ -24,4 +24,10 @@ public struct SpawnConfiguration
     public ColorRangeHSV color;
 
     public bool uniformColor;
+
+    public MovementDirection oscillationDirection;
+
+    public FloatRange oscillationAmplitude;
+
+    public FloatRange oscillationFrequency;
 }
