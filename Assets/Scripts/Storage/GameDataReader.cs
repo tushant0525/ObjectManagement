@@ -51,4 +51,8 @@ public class GameDataReader
     {
         return JsonUtility.FromJson<Random.State>(reader.ReadString());
     }
+    public ShapeInstance ReadShapeInstance()
+    {
+        return new ShapeInstance(reader.ReadInt32());
+    }
 }

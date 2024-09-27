@@ -5,13 +5,22 @@ using UnityEngine;
 public class GameLevel : PersistableObject
 {
     [SerializeField]
+    int populationLimit;
+
+    [SerializeField]
     SpawnZone spawnZone;
 
     [SerializeField]
     PersistableObject[] persistentObjects;
 
     public static GameLevel Current { get; private set; }
-
+    public int PopulationLimit
+    {
+        get
+        {
+            return populationLimit;
+        }
+    }
     void OnEnable()
     {
         Current = this;
@@ -21,9 +30,9 @@ public class GameLevel : PersistableObject
         }
     }
 
-    public Shape SpawnShape()
+    public void SpawnShapes()
     {
-        return spawnZone.SpawnShape();
+        spawnZone.SpawnShapes();
     }
     public override void Save(GameDataWriter writer)
     {

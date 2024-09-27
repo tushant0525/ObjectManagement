@@ -8,7 +8,7 @@ public abstract class SpawnZone : PersistableObject
     SpawnConfiguration spawnConfig;
 
     public abstract Vector3 SpawnPoint { get; }
-    public virtual Shape SpawnShape()
+    public virtual void SpawnShapes()
     {
         int factoryIndex = Random.Range(0, spawnConfig.factories.Length);
         Shape shape = spawnConfig.factories[factoryIndex].GetRandom();
@@ -17,17 +17,7 @@ public abstract class SpawnZone : PersistableObject
         t.localPosition = SpawnPoint;
         t.localRotation = Random.rotation;
         t.localScale = Vector3.one * spawnConfig.scale.RandomValueInRange;
-        if (spawnConfig.uniformColor)
-        {
-            shape.SetColor(spawnConfig.color.RandomInRange);
-        }
-        else
-        {
-            for (int i = 0; i < shape.ColorCount; i++)
-            {
-                shape.SetColor(spawnConfig.color.RandomInRange, i);
-            }
-        }
+        SetupColor(shape);
         float angularSpeed = spawnConfig.angularSpeed.RandomValueInRange;
         if (angularSpeed != 0f)
         {
@@ -41,8 +31,15 @@ public abstract class SpawnZone : PersistableObject
             movement.Velocity = GetDirectionVector(spawnConfig.movementDirection, t) * speed;
         }
         SetupOscillation(shape);
-        return shape;
+        int satelliteCount = spawnConfig.satellite.amount.RandomValueInRange;
+        for (int i = 0; i < satelliteCount; i++)
+        {
+            CreateSatelliteFor(shape);
+        }
     }
+
+
+
     private void SetupOscillation(Shape shape)
     {
         float amplitude = spawnConfig.oscillationAmplitude.RandomValueInRange;
@@ -69,6 +66,38 @@ public abstract class SpawnZone : PersistableObject
                 return Random.onUnitSphere;
             default:
                 return transform.forward;
+        }
+    }
+
+    //Focal shape is the shape that the satellite will orbit around
+    void CreateSatelliteFor(Shape focalShape)
+    {
+        int factoryIndex = Random.Range(0, spawnConfig.factories.Length);
+        Shape shape = spawnConfig.factories[factoryIndex].GetRandom();
+        Transform t = shape.transform;
+        t.localRotation = Random.rotation;
+        t.localScale =
+              focalShape.transform.localScale *
+              spawnConfig.satellite.relativeScale.RandomValueInRange;
+        SetupColor(shape);
+        shape.AddBehavior<SatelliteShapeBehavior>().Initialize(
+            shape, focalShape,
+            spawnConfig.satellite.orbitRadius.RandomValueInRange,
+            spawnConfig.satellite.orbitFrequency.RandomValueInRange
+        );
+    }
+    private void SetupColor(Shape shape)
+    {
+        if (spawnConfig.uniformColor)
+        {
+            shape.SetColor(spawnConfig.color.RandomInRange);
+        }
+        else
+        {
+            for (int i = 0; i < shape.ColorCount; i++)
+            {
+                shape.SetColor(spawnConfig.color.RandomInRange, i);
+            }
         }
     }
 }

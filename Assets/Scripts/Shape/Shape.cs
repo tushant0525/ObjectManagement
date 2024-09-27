@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Shape : PersistableObject
 {
-  
+
 
     [SerializeField]
     MeshRenderer[] meshRenderers;
@@ -15,7 +15,8 @@ public class Shape : PersistableObject
 
     public int MaterialId { get; private set; }
     public float Age { get; private set; }
-
+    public int InstanceId { get; private set; }
+    public int SaveIndex { get; set; }
     public int ShapeId
     {
         get
@@ -64,7 +65,7 @@ public class Shape : PersistableObject
 
     ShapeFactory originFactory;
     List<ShapeBehavior> behaviorList = new List<ShapeBehavior>();
-    
+
     private void Awake()
     {
         colors = new Color[meshRenderers.Length];
@@ -185,12 +186,17 @@ public class Shape : PersistableObject
         Age += Time.deltaTime;
         for (int i = 0; i < behaviorList.Count; i++)
         {
-            behaviorList[i].GameUpdate(this);
+            if (!behaviorList[i].GameUpdate(this))
+            {
+                behaviorList[i].Recycle();
+                behaviorList.RemoveAt(i--);
+            }
         }
     }
     public void Recycle()
     {
         Age = 0f;
+        InstanceId += 1;
         for (int i = 0; i < behaviorList.Count; i++)
         {
             behaviorList[i].Recycle();
@@ -198,10 +204,17 @@ public class Shape : PersistableObject
         behaviorList.Clear();
         OriginFactory.Reclaim(this);
     }
-    public T AddBehavior<T>() where T : ShapeBehavior,new()
+    public T AddBehavior<T>() where T : ShapeBehavior, new()
     {
         T behavior = ShapeBehaviorPool<T>.Get();
         behaviorList.Add(behavior);
         return behavior;
+    }
+    public void ResolveShapeInstances()
+    {
+        for (int i = 0; i < behaviorList.Count; i++)
+        {
+            behaviorList[i].ResolveShapeInstances();
+        }
     }
 }

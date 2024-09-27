@@ -3,7 +3,7 @@ using UnityEngine;
 [System.Serializable]
 public struct SpawnConfiguration
 {
-
+  
     public enum MovementDirection
     {
         Forward,
@@ -30,4 +30,20 @@ public struct SpawnConfiguration
     public FloatRange oscillationAmplitude;
 
     public FloatRange oscillationFrequency;
+
+    [System.Serializable]
+    public struct SatelliteConfiguration
+    {
+        public IntRange amount;
+
+        [FloatRangeSlider(0.1f, 1f)]
+        public FloatRange relativeScale;
+
+        public FloatRange orbitRadius;
+
+        public FloatRange orbitFrequency;
+    }
+
+
+    public SatelliteConfiguration satellite;
 }

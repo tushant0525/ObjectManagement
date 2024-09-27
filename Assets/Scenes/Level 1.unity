@@ -268,7 +268,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 2.9699998, y: 2.9699998, z: 2.9699998}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -312,11 +312,24 @@ MonoBehaviour:
     uniformColor: 0
     oscillationDirection: 2
     oscillationAmplitude:
-      min: 0.1
-      max: 1
+      min: 0
+      max: 0
     oscillationFrequency:
-      min: 1
-      max: 1
+      min: 0
+      max: 0
+    satellite:
+      amount:
+        min: 0
+        max: 3
+      relativeScale:
+        min: 0.25
+        max: 0.5
+      orbitRadius:
+        min: 1
+        max: 2
+      orbitFrequency:
+        min: 0.25
+        max: 0.5
   surfaceOnly: 0
 --- !u!1 &2044056125
 GameObject:
@@ -347,6 +360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9368c14ea1808594da83d3fd05f0b004, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  populationLimit: 100
   spawnZone: {fileID: 245663813}
   persistentObjects:
   - {fileID: 245663813}
