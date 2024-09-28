@@ -2,8 +2,7 @@
 using UnityEngine;
 
 partial class GameLevel 
-{
-   
+{   
     public bool HasMissingLevelObjects
     {
         get
@@ -36,7 +35,7 @@ partial class GameLevel
                 holes += 1;
                 System.Array.Copy(
                     levelObjects, i + 1, levelObjects, i,
-                    levelObjects.Length - i - -holes
+                    levelObjects.Length - i - holes
                 );
                 i -= 1;
             }

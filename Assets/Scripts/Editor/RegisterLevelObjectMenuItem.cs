@@ -31,10 +31,10 @@ static class RegisterLevelObjectMenuItem
         }
     }
 
-    private static void Register(Gameobject o)
+    private static void Register(GameObject o)
     {
-
-        if (PrefabUtility.GetPrefabType(o) == PrefabType.Prefab)
+        
+        if (PrefabUtility.GetPrefabAssetType(o)==PrefabAssetType.Regular)
         {
             Debug.LogWarning(o.name + " is a prefab asset.", o);
             return;
