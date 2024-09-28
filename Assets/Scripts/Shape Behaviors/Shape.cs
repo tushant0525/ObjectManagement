@@ -217,4 +217,20 @@ public class Shape : PersistableObject
             behaviorList[i].ResolveShapeInstances();
         }
     }
+    public void Die()
+    {
+        GameManager.Instance.Kill(this);
+    }
+
+    public void MarkAsDying()
+    {
+        GameManager.Instance.MarkAsDying(this);
+    }
+    public bool IsMarkedAsDying
+    {
+        get
+        {
+            return GameManager.Instance.IsMarkedAsDying(this);
+        }
+    }
 }

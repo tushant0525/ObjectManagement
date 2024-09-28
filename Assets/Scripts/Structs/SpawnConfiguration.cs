@@ -42,8 +42,38 @@ public struct SpawnConfiguration
         public FloatRange orbitRadius;
 
         public FloatRange orbitFrequency;
+
+        public bool uniformLifecycles;
     }
 
 
     public SatelliteConfiguration satellite;
+
+    [System.Serializable]
+    public struct LifecycleConfiguration
+    {
+
+        [FloatRangeSlider(0f, 2f)]
+        public FloatRange growingDuration;
+
+        [FloatRangeSlider(0f, 100f)]
+        public FloatRange adultDuration;
+
+        [FloatRangeSlider(0f, 2f)]
+        public FloatRange dyingDuration;
+        public Vector3 RandomDurations
+        {
+            get
+            {
+                return new Vector3(
+                    growingDuration.RandomValueInRange,
+                    adultDuration.RandomValueInRange,
+                    dyingDuration.RandomValueInRange
+                );
+            }
+        }
+
+    }
+
+    public LifecycleConfiguration lifecycle;
 }

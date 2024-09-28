@@ -330,6 +330,17 @@ MonoBehaviour:
       orbitFrequency:
         min: 0.25
         max: 0.5
+      uniformLifecycles: 0
+    lifecycle:
+      growingDuration:
+        min: 1
+        max: 2
+      adultDuration:
+        min: 1
+        max: 5
+      dyingDuration:
+        min: 1
+        max: 2
   surfaceOnly: 0
 --- !u!1 &2044056125
 GameObject:

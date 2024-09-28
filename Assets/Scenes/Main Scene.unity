@@ -1411,6 +1411,7 @@ MonoBehaviour:
   reseedOnLoad: 0
   creationSpeedSlider: {fileID: 1994171031}
   destructionSpeedSlider: {fileID: 1683912404}
+  destroyDuration: 1
 --- !u!1 &1954370001
 GameObject:
   m_ObjectHideFlags: 0
