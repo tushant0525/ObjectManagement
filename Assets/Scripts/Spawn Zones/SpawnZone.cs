@@ -2,19 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class SpawnZone : PersistableObject
+public abstract class SpawnZone : GameLevelObject
 {
     [SerializeField, Range(0f, 50f)]
     float spawnSpeed;
 
     [SerializeField]
     SpawnConfiguration spawnConfig;
- 
+
     public abstract Vector3 SpawnPoint { get; }
 
     float spawnProgress;
 
-    void FixedUpdate()
+    public override void GameUpdate()
     {
         spawnProgress += Time.deltaTime * spawnSpeed;
         while (spawnProgress >= 1f)
@@ -28,7 +28,7 @@ public abstract class SpawnZone : PersistableObject
     {
         int factoryIndex = Random.Range(0, spawnConfig.factories.Length);
         Shape shape = spawnConfig.factories[factoryIndex].GetRandom();
-
+        shape.gameObject.layer = gameObject.layer;
         Transform t = shape.transform;
         t.localPosition = SpawnPoint;
         t.localRotation = Random.rotation;
@@ -98,6 +98,7 @@ public abstract class SpawnZone : PersistableObject
     {
         int factoryIndex = Random.Range(0, spawnConfig.factories.Length);
         Shape shape = spawnConfig.factories[factoryIndex].GetRandom();
+        shape.gameObject.layer = gameObject.layer;
         Transform t = shape.transform;
         t.localRotation = Random.rotation;
         t.localScale =
@@ -150,5 +151,14 @@ public abstract class SpawnZone : PersistableObject
             shape.AddBehavior<DyingShapeBehavior>().Initialize(
                 shape, durations.z);
         }
+    }
+    public override void Save(GameDataWriter writer)
+    {
+        writer.Write(spawnProgress);
+    }
+
+    public override void Load(GameDataReader reader)
+    {
+        spawnProgress = reader.ReadFloat();
     }
 }

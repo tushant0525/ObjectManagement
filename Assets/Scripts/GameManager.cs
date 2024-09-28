@@ -7,6 +7,7 @@ using UnityEngine.UI;
 [DisallowMultipleComponent]
 public class GameManager : PersistableObject
 {
+    const int saveVersion = 7;
     public static GameManager Instance { get; private set; }
 
     [SerializeField] ShapeFactory[] shapeFactories;
@@ -37,7 +38,7 @@ public class GameManager : PersistableObject
     Random.State mainRandomState;
     int dyingShapeCount;
 
-    const int saveVersion = 6;
+
 
     void OnEnable()
     {
@@ -116,6 +117,7 @@ public class GameManager : PersistableObject
         {
             shapes[i].GameUpdate();
         }
+        GameLevel.Current.GameUpdate();
         inGameUpdateLoop = false;
         creationProgress += Time.deltaTime * CreationSpeed;
         while (creationProgress >= 1f)

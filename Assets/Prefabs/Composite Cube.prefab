@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6175819958823405814}
   - component: {fileID: 4524662785048164778}
   - component: {fileID: 9053338536206378068}
+  - component: {fileID: 7748784077404907650}
   m_Layer: 0
   m_Name: Composite Cube
   m_TagString: Untagged
@@ -102,6 +103,27 @@ MonoBehaviour:
   - {fileID: 4524662785048164778}
   - {fileID: 2940927547949018588}
   - {fileID: 7997454369183442275}
+--- !u!135 &7748784077404907650
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1034438063267972581}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.8
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5740470311537345650
 GameObject:
   m_ObjectHideFlags: 0

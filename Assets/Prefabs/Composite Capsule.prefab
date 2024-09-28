@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 257717498209628505}
   - component: {fileID: 4673398237507403664}
   - component: {fileID: 3448058810390707875}
+  - component: {fileID: 6969977251265354168}
   m_Layer: 0
   m_Name: Composite Capsule
   m_TagString: Untagged
@@ -102,6 +103,27 @@ MonoBehaviour:
   - {fileID: 4673398237507403664}
   - {fileID: 3582207007297861390}
   - {fileID: 292263143645119036}
+--- !u!135 &6969977251265354168
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 46127028085959458}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.82
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &783692226570723388
 GameObject:
   m_ObjectHideFlags: 0
